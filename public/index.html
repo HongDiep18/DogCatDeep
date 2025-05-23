@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân loại hình ảnh chó-mèo</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🐱🐶 Phân loại hình ảnh chó-mèo 3</h1>
+            <p>Sử dụng mạng nơ-ron tích chập (CNN) để phân loại hình ảnh</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <p>Kéo thả ảnh vào đây hoặc click để chọn file</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button id="selectBtn" class="btn">Chọn ảnh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" alt="Preview">
+                </div>
+                <button id="predictBtn" class="btn btn-primary">Phân loại ảnh</button>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <h3>Kết quả phân loại:</h3>
+                    <div class="result-content">
+                        <div class="prediction-result">
+                            <span class="animal-icon" id="animalIcon"></span>
+                            <span class="prediction-text" id="predictionText"></span>
+                        </div>
+                        <div class="confidence-bar">
+                            <div class="confidence-label">Độ tin cậy:</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="confidenceBar"></div>
+                            </div>
+                            <span class="confidence-text" id="confidenceText"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Đang tải mô hình...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Phát triển bởi [Tên của bạn] - Sử dụng TensorFlow.js</p>
+        </footer>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
